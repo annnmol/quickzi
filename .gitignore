@@ -40,3 +40,7 @@ yarn-error.*
 package-lock.json
 yarn.lock
 bun.lock
+
+#native
+android/
+ios/
