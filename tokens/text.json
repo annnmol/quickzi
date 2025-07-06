@@ -3,42 +3,48 @@
     "value": {
       "fontSize": 16,
       "lineHeight": 24,
-      "fontFamily": "Inter"
+      "fontFamily": "Inter",
+      "fontWeight": "400"
     }
   },
   "defaultSemiBold": {
     "value": {
       "fontSize": 16,
       "lineHeight": 24,
-      "fontFamily": "InterBold"
+      "fontFamily": "Inter",
+      "fontWeight": "600"
     }
   },
   "title": {
     "value": {
       "fontSize": 28,
       "lineHeight": 36,
-      "fontFamily": "InterBold"
+      "fontFamily": "Inter",
+      "fontWeight": "700"
     }
   },
   "heading": {
     "value": {
       "fontSize": 24,
       "lineHeight": 32,
-      "fontFamily": "InterBold"
+      "fontFamily": "Inter",
+      "fontWeight": "700"
     }
   },
   "subtitle": {
     "value": {
       "fontSize": 18,
       "lineHeight": 28,
-      "fontFamily": "InterBold"
+      "fontFamily": "Inter",
+      "fontWeight": "700"
     }
   },
   "link": {
     "value": {
       "fontSize": 16,
       "lineHeight": 24,
-      "fontFamily": "InterBold",
+      "fontFamily": "Inter",
+      "fontWeight": "600",
       "color": "royalblue"
     }
   },
@@ -46,21 +52,24 @@
     "value": {
       "fontSize": 14,
       "lineHeight": 20,
-      "fontFamily": "Inter"
+      "fontFamily": "Inter",
+      "fontWeight": "400"
     }
   },
   "captionSemiBold": {
     "value": {
       "fontSize": 14,
       "lineHeight": 20,
-      "fontFamily": "InterBold"
+      "fontFamily": "Inter",
+      "fontWeight": "600"
     }
   },
   "small": {
     "value": {
       "fontSize": 12,
       "lineHeight": 16,
-      "fontFamily": "InterLight"
+      "fontFamily": "Inter",
+      "fontWeight": "300"
     }
   }
 }

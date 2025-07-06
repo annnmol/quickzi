@@ -21,6 +21,7 @@ export type TextStyleToken = {
   fontSize: number;
   lineHeight: number;
   fontFamily: string;
+  fontWeight: string;
   color?: string;
 };
 
@@ -35,7 +36,8 @@ const flattenTokens = (tokens: RawTokenMap) =>
       {
         fontSize: normalize(value.fontSize),
         lineHeight: normalize(value.lineHeight),
-        fontFamily: value.fontFamily,
+        fontFamily: value.fontFamily ?? "sans-serif",
+        fontWeight: value.fontWeight ?? 400,
         ...(value.color && { color: value.color }),
       },
     ])

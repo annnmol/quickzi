@@ -27,6 +27,9 @@ const Example = () => {
       <View style={styles.card} />
 
       <AppText>Fruits & Vegetables</AppText>
+      <AppText variant="title">Fruits & Vegetables</AppText>
+      <AppText variant="heading" style={{fontWeight:"700"}}>Fruits & Vegetables</AppText>
+      <AppText style={styles.text}>Fruits & Vegetables</AppText>
     </View>
   );
 };
