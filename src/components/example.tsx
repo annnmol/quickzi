@@ -3,10 +3,12 @@ import React from "react";
 import { theme } from "../lib/theme";
 import useSystemStore from "../store/slices/system";
 import { useShallow } from "zustand/react/shallow";
+import { tokens } from "../lib/tokens";
+import AppText from "./ui/text";
 
 const Example = () => {
-    const theme = useSystemStore(useShallow((state) => state.colorScheme));
-    const setTheme = useSystemStore(useShallow((state) => state.setColorScheme));
+  const theme = useSystemStore(useShallow((state) => state.colorScheme));
+  const setTheme = useSystemStore(useShallow((state) => state.setColorScheme));
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Welcome to Quickzi!</Text>
@@ -22,6 +24,9 @@ const Example = () => {
           });
         }}
       />
+      <View style={styles.card} />
+
+      <AppText>Fruits & Vegetables</AppText>
     </View>
   );
 };
@@ -37,6 +42,16 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
-    color: theme.primary,
+    fontWeight: "bold",
+    color: theme.tabIconSelected,
+  },
+
+  card: {
+    height: 200,
+    width: 200,
+    backgroundColor: theme.card,
+    padding: tokens.spacing16,
+    borderRadius: tokens.radius8,
+    ...tokens.shadow4,
   },
 });

@@ -1,0 +1,38 @@
+{
+  "shadow0": {
+    "value": {
+      "elevation": 0,
+      "shadowColor": "transparent",
+      "shadowOffset": { "width": 0, "height": 0 },
+      "shadowOpacity": 0,
+      "shadowRadius": 0
+    }
+  },
+  "shadow2": {
+    "value": {
+      "elevation": 2,
+      "shadowColor": "#000",
+      "shadowOffset": { "width": 0, "height": 1 },
+      "shadowOpacity": 0.1,
+      "shadowRadius": 2
+    }
+  },
+  "shadow4": {
+    "value": {
+      "elevation": 4,
+      "shadowColor": "#000",
+      "shadowOffset": { "width": 0, "height": 2 },
+      "shadowOpacity": 0.12,
+      "shadowRadius": 4
+    }
+  },
+  "shadow8": {
+    "value": {
+      "elevation": 8,
+      "shadowColor": "#000",
+      "shadowOffset": { "width": 0, "height": 4 },
+      "shadowOpacity": 0.18,
+      "shadowRadius": 6
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "radius0": { "value": 0 },
+  "radius4": { "value": 4 },
+  "radius8": { "value": 8 },
+  "radius12": { "value": 12 },
+  "radius20": { "value": 20 },
+  "radiusFull": { "value": 9999 }
+}

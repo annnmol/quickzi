@@ -1,0 +1,13 @@
+{
+  "spacing0": { "value": 0 },
+  "spacing2": { "value": 2 },
+  "spacing4": { "value": 4 },
+  "spacing6": { "value": 6 },
+  "spacing8": { "value": 8 },
+  "spacing10": { "value": 10 },
+  "spacing12": { "value": 12 },
+  "spacing16": { "value": 16 },
+  "spacing20": { "value": 20 },
+  "spacing24": { "value": 24 },
+  "spacing32": { "value": 32 }
+}

@@ -1,0 +1,66 @@
+{
+  "default": {
+    "value": {
+      "fontSize": 16,
+      "lineHeight": 24,
+      "fontFamily": "Inter"
+    }
+  },
+  "defaultSemiBold": {
+    "value": {
+      "fontSize": 16,
+      "lineHeight": 24,
+      "fontFamily": "InterBold"
+    }
+  },
+  "title": {
+    "value": {
+      "fontSize": 28,
+      "lineHeight": 36,
+      "fontFamily": "InterBold"
+    }
+  },
+  "heading": {
+    "value": {
+      "fontSize": 24,
+      "lineHeight": 32,
+      "fontFamily": "InterBold"
+    }
+  },
+  "subtitle": {
+    "value": {
+      "fontSize": 18,
+      "lineHeight": 28,
+      "fontFamily": "InterBold"
+    }
+  },
+  "link": {
+    "value": {
+      "fontSize": 16,
+      "lineHeight": 24,
+      "fontFamily": "InterBold",
+      "color": "royalblue"
+    }
+  },
+  "caption": {
+    "value": {
+      "fontSize": 14,
+      "lineHeight": 20,
+      "fontFamily": "Inter"
+    }
+  },
+  "captionSemiBold": {
+    "value": {
+      "fontSize": 14,
+      "lineHeight": 20,
+      "fontFamily": "InterBold"
+    }
+  },
+  "small": {
+    "value": {
+      "fontSize": 12,
+      "lineHeight": 16,
+      "fontFamily": "InterLight"
+    }
+  }
+}
