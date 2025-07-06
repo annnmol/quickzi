@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Example from './components/example';
+import { StyleSheet } from "react-native";
+import GlobalContextProvider from "./components/providers/global-providers";
+
+// Custom imports
+import RootNavigator from "@app/src/navigation/root";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Welcome to Quickzi!</Text>
-      <Example />
-      <StatusBar style="auto" />
-    </View>
+    <GlobalContextProvider>
+      <RootNavigator />
+    </GlobalContextProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
   },
 });

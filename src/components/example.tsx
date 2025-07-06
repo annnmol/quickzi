@@ -7,6 +7,9 @@ import { tokens } from "../lib/tokens";
 import AppText from "./ui/text";
 import AppButton from "./ui/button";
 import AppTextInput from "./ui/textinput";
+import { navigate } from "../lib/navigation";
+import ReanimatedTest from "./reanimated";
+import GestureTest from "./gesture";
 
 const Example = () => {
   const theme = useSystemStore(useShallow((state) => state.colorScheme));
@@ -26,6 +29,14 @@ const Example = () => {
         editable={false}
         style={{ opacity: 0.6 }}
       />
+      <Button title="Go to Profile" onPress={() => navigate("demo")} />
+      <ReanimatedTest />
+      <GestureTest />
+      {/* Uncomment the following lines to display a welcome message and example component */}
+      {/* <View style={styles.container}>
+        <Text>Welcome to Quickzi!</Text>
+        <Example />
+        <StatusBar style="auto" />
       {/* <Text style={styles.text}>Welcome to Quickzi!</Text>
       <Text style={styles.text}>Theme: {theme}</Text>
       <Button
