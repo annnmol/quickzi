@@ -6,18 +6,31 @@ import { useShallow } from "zustand/react/shallow";
 import { tokens } from "../lib/tokens";
 import AppText from "./ui/text";
 import AppButton from "./ui/button";
+import AppTextInput from "./ui/textinput";
 
 const Example = () => {
   const theme = useSystemStore(useShallow((state) => state.colorScheme));
   const setTheme = useSystemStore(useShallow((state) => state.setColorScheme));
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Welcome to Quickzi!</Text>
+      <AppTextInput placeholder="Search" />
+
+      <AppTextInput
+        placeholder="Phone Number"
+        keyboardType="phone-pad"
+        containerStyle={{ marginTop: 12 }}
+      />
+
+      <AppTextInput
+        placeholder="Disabled input"
+        editable={false}
+        style={{ opacity: 0.6 }}
+      />
+      {/* <Text style={styles.text}>Welcome to Quickzi!</Text>
       <Text style={styles.text}>Theme: {theme}</Text>
       <Button
         title="Switch Theme"
         onPress={() => {
-          // alert("Button Pressed!");
           setTheme((prev) => {
             if (prev === "light") return "dark";
             if (prev === "dark") return "system";
@@ -36,7 +49,7 @@ const Example = () => {
       <AppButton variant="outline">Cancel</AppButton>
       <AppButton variant="danger">Delete</AppButton>
       <AppButton variant="danger-outline" textThemeKey="red">Remove</AppButton>
-      <AppButton textVariant="heading" variant="outline">Login</AppButton>
+      <AppButton textVariant="heading" variant="outline">Login</AppButton> */}
     </View>
   );
 };
@@ -47,8 +60,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: theme.background,
-    alignItems: "center",
-    justifyContent: "center",
+    marginTop: 40,
+    // alignItems: "center",
+    // justifyContent: "center",
   },
   text: {
     fontSize: 20,
