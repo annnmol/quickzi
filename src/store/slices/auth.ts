@@ -7,7 +7,11 @@ import { zustandStorage } from "@app/src/store/storage-mmkv";
 
 export const STORAGE_KEY = `${productConfig.identifier}-auth`;
 
-type IAuthUser = {};
+type IAuthUser = {
+  id: string;
+  email: string;
+  name: string;
+};
 
 interface StoreState {
   authSession: IAuthUser | null | undefined;
