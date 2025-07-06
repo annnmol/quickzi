@@ -5,6 +5,7 @@ import useSystemStore from "../store/slices/system";
 import { useShallow } from "zustand/react/shallow";
 import { tokens } from "../lib/tokens";
 import AppText from "./ui/text";
+import AppButton from "./ui/button";
 
 const Example = () => {
   const theme = useSystemStore(useShallow((state) => state.colorScheme));
@@ -30,6 +31,12 @@ const Example = () => {
       <AppText variant="title">Fruits & Vegetables</AppText>
       <AppText variant="heading" style={{fontWeight:"700"}}>Fruits & Vegetables</AppText>
       <AppText style={styles.text}>Fruits & Vegetables</AppText>
+<AppButton>Continue</AppButton>
+      <AppButton variant="ghost" textThemeKey="primary">Skip</AppButton>
+      <AppButton variant="outline">Cancel</AppButton>
+      <AppButton variant="danger">Delete</AppButton>
+      <AppButton variant="danger-outline" textThemeKey="red">Remove</AppButton>
+      <AppButton textVariant="heading" variant="outline">Login</AppButton>
     </View>
   );
 };

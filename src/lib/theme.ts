@@ -31,3 +31,18 @@ export type ThemeTypeMap = typeof theme;
 export type ThemeKeys = keyof ThemeTypeMap;
 
 export const isDarkTheme = (): boolean => colorScheme === "dark";
+
+// Get color + opacity version
+export const getThemeColorWithOpacity = (
+  key: ThemeKeys,
+  opacity: number
+): string => {
+  const rgb = theme[key]
+    ?.replace("rgb(", "")
+    ?.replace(")", "")
+    ?.split(",")
+    ?.map((n) => parseInt(n.trim()));
+
+  const [r, g, b] = rgb;
+  return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+};

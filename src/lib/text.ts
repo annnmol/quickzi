@@ -1,4 +1,4 @@
-import { Dimensions } from "react-native";
+import { Dimensions, TextStyle } from "react-native";
 
 // custom imports
 import textTokens from "../../tokens/text.json";
@@ -10,7 +10,7 @@ const MIN_SCALE = 0.95;
 const screenWidth = Dimensions.get("window").width;
 const screenScale = screenWidth / BASE_WIDTH;
 
-export const normalize = (size: number): number => {
+export const getResponsiveText = (size: number): number => {
   const clamped = Math.min(Math.max(screenScale, MIN_SCALE), MAX_SCALE);
   return Math.round(size * clamped);
 };
@@ -21,7 +21,7 @@ export type TextStyleToken = {
   fontSize: number;
   lineHeight: number;
   fontFamily: string;
-  fontWeight: string;
+  fontWeight: TextStyle["fontWeight"];
   color?: string;
 };
 
@@ -34,8 +34,8 @@ const flattenTokens = (tokens: RawTokenMap) =>
     Object.entries(tokens).map(([key, { value }]) => [
       key,
       {
-        fontSize: normalize(value.fontSize),
-        lineHeight: normalize(value.lineHeight),
+        fontSize: getResponsiveText(value.fontSize),
+        lineHeight: getResponsiveText(value.lineHeight),
         fontFamily: value.fontFamily ?? "sans-serif",
         fontWeight: value.fontWeight ?? 400,
         ...(value.color && { color: value.color }),

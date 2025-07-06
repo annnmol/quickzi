@@ -6,7 +6,7 @@ import {
   type StyleProp
 } from "react-native";
 
-// design system
+// custom imports
 import { textVariants, TextVariant } from "@app/src/lib/text";
 import { useThemeColor } from "@app/src/components/hooks/useThemeColor";
 import { ThemeKeys } from "@app/src/lib/theme";
