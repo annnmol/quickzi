@@ -13,3 +13,5 @@ bun install zustand react-native-mmkv
 bun install expo-font expo-splash-screen
 
 bunx expo install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-masked-view/masked-view @react-navigation/native @react-navigation/native-stack
+
+bunx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
