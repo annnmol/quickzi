@@ -1,14 +1,16 @@
+import { router } from "expo-router";
 import React from "react";
-import { View, StyleSheet, ScrollView } from "react-native";
-import AppText from "../ui/text";
-import AppButton from "../ui/button";
+import { ScrollView, StyleSheet, View } from "react-native";
 import { theme } from "../../lib/theme";
-import { tokens } from "../../lib/tokens";
-import { navigate } from "../../lib/navigation";
+// import { tokens } from "../../lib/tokens";
+import AppButton from "../ui/button";
+import AppText from "../ui/text";
+import { tokens } from "@app/src/lib/tokens";
 
 const Search = () => {
   const navigateToSearchDetail = () => {
-    navigate("search-detail");
+    router.push("/(protected)/search/search-detail");
+    
   };
 
   return (

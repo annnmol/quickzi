@@ -5,15 +5,20 @@ import AppButton from "../ui/button";
 import { theme } from "../../lib/theme";
 import { tokens } from "../../lib/tokens";
 import { navigate } from "../../lib/navigation";
+import { router } from "expo-router";
+import useAuthStore from "@app/src/store/slices/auth";
+import { useShallow } from "zustand/react/shallow";
 
 const Settings = () => {
+  const setAuthState = useAuthStore(useShallow((state) => state.setAuthState));
   const navigateToSettingsDetail = () => {
-    navigate("settings-detail");
+  router.push("/(protected)/settings/settings-detail");
   };
 
   const handleLogout = () => {
     // TODO: Implement logout logic
-    navigate("auth");
+    // navigate("auth");
+    setAuthState(null, "");
   };
 
   return (

@@ -6,6 +6,7 @@ import AppTextInput from "../ui/textinput";
 import { theme } from "../../lib/theme";
 import { tokens } from "../../lib/tokens";
 import { goBack } from "../../lib/navigation";
+import { router } from "expo-router";
 
 const EditProfile = () => {
   const [name, setName] = React.useState("John Doe");
@@ -14,12 +15,12 @@ const EditProfile = () => {
   const [location, setLocation] = React.useState("New York, NY");
 
   const handleGoBack = () => {
-    goBack();
+   router.back();
   };
 
   const handleSave = () => {
     // TODO: Implement save logic
-    goBack();
+    router.back();
   };
 
   return (

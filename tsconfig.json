@@ -8,7 +8,22 @@
     "paths": {
       "@app/*": [
         "./*"
-      ]
+      ],
+      "@app/src/*": [
+        "./src/*"
+      ],
+      "@app/src/components/*": [
+        "./src/components/*"
+      ],
+      "@app/src/lib/*": [
+        "./src/lib/*"
+      ],
+      "@app/src/store/*": [
+        "./src/store/*"
+      ],
+      "@app/src/services/*": [
+        "./src/services/*"
+      ],
     }
   },
   "include": [

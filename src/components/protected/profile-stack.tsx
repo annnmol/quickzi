@@ -5,14 +5,15 @@ import AppButton from "../ui/button";
 import { theme } from "../../lib/theme";
 import { tokens } from "../../lib/tokens";
 import { goBack, navigate } from "../../lib/navigation";
+import { router } from "expo-router";
 
 const ProfileStack = () => {
   const handleGoBack = () => {
-    goBack();
+    router.back();
   };
 
   const navigateToEditProfile = () => {
-    navigate("edit-profile");
+    router.push("/(protected)/profile/edit-profile");
   };
 
   return (
@@ -55,10 +56,7 @@ const ProfileStack = () => {
           </View>
         </View>
 
-        <AppButton
-          onPress={navigateToEditProfile}
-          style={styles.editButton}
-        >
+        <AppButton onPress={navigateToEditProfile} style={styles.editButton}>
           Edit Profile
         </AppButton>
 

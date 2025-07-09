@@ -4,11 +4,11 @@ import AppText from "../ui/text";
 import AppButton from "../ui/button";
 import { theme } from "../../lib/theme";
 import { tokens } from "../../lib/tokens";
-import { goBack } from "../../lib/navigation";
+import { router } from "expo-router";
 
 const SearchDetail = () => {
   const handleGoBack = () => {
-    goBack();
+    router.back();
   };
 
   return (

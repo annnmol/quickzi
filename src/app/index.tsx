@@ -1,14 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React from "react";
+import Example from "../components/example";
+import { Redirect } from "expo-router";
+import useAuthStore from "../store/slices/auth";
+import { useShallow } from "zustand/react/shallow";
 
 const Index = () => {
-  return (
-    <View>
-      <Text>Index</Text>
-    </View>
-  )
-}
+  const authSession = useAuthStore(useShallow((state) => state.authSession));
 
-export default Index
+  if (authSession?.email) {
+    return <Redirect href="/(protected)/home" />;
+  }
 
-const styles = StyleSheet.create({})
+  return <Redirect href="/(auth)/sign-in" />;
+};
+
+export default Index;

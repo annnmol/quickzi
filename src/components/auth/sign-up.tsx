@@ -6,12 +6,13 @@ import AppTextInput from "../ui/textinput";
 import { theme } from "../../lib/theme";
 import { tokens } from "../../lib/tokens";
 import { navigate, goBack } from "../../lib/navigation";
+import { router } from "expo-router";
 
 const SignUp = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [name, setName] = useState("abc");
+  const [email, setEmail] = useState("a@a.com");
+  const [password, setPassword] = useState("123456");
+  const [confirmPassword, setConfirmPassword] = useState("123456");
 
   const handleSignUp = () => {
     if (!name || !email || !password || !confirmPassword) {
@@ -28,13 +29,13 @@ const SignUp = () => {
     Alert.alert("Success", "Account created successfully!", [
       {
         text: "OK",
-        onPress: () => navigate("protected"),
+        onPress: () => navigateToSignIn(),
       },
     ]);
   };
 
   const navigateToSignIn = () => {
-    goBack();
+    router.push("/(auth)/sign-in");
   };
 
   return (

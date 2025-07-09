@@ -6,27 +6,39 @@ import AppTextInput from "../ui/textinput";
 import { theme } from "../../lib/theme";
 import { tokens } from "../../lib/tokens";
 import { navigate } from "../../lib/navigation";
+import { router } from "expo-router";
+import useAuthStore from "@app/src/store/slices/auth";
+import { useShallow } from "zustand/react/shallow";
 
 const SignIn = () => {
   const [email, setEmail] = useState("a@a.com");
   const [password, setPassword] = useState("123456");
-
+  const setAuthState = useAuthStore(useShallow((state) => state.setAuthState));
   const handleSignIn = () => {
     if (!email || !password) {
       Alert.alert("Error", "Please fill in all fields");
       return;
     }
-    // TODO: Implement actual sign-in logic
-    Alert.alert("Success", "Sign in successful!", [
+
+    setAuthState(
       {
-        text: "OK",
-        onPress: () => navigate("protected"),
+        name: "Anmol Tanwar",
+        id: "123",
+        email: "a@a.com",
       },
-    ]);
+      "token"
+    );
+    // TODO: Implement actual sign-in logic
+    // Alert.alert("Success", "Sign in successful!", [
+    //   {
+    //     text: "OK",
+    //     onPress: () => router.replace("/(protected)/home"),
+    //   },
+    // ]);
   };
 
   const navigateToSignUp = () => {
-    navigate("sign-up");
+    router.push("/(auth)/sign-up");
   };
 
   return (

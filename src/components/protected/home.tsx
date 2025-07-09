@@ -1,18 +1,18 @@
+import { router } from "expo-router";
 import React from "react";
-import { View, StyleSheet, ScrollView } from "react-native";
-import AppText from "../ui/text";
-import AppButton from "../ui/button";
+import { ScrollView, StyleSheet, View } from "react-native";
 import { theme } from "../../lib/theme";
 import { tokens } from "../../lib/tokens";
-import { navigate } from "../../lib/navigation";
+import AppButton from "../ui/button";
+import AppText from "../ui/text";
 
 const Home = () => {
   const navigateToProfile = () => {
-    navigate("profile-stack");
+    router.push("/(protected)/profile/edit-profile");
   };
 
   const navigateToSettings = () => {
-    navigate("settings-detail");
+    router.push("/(protected)/settings/settings-detail");
   };
 
   return (

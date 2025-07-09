@@ -7,22 +7,23 @@ import { tokens } from "../../lib/tokens";
 import { goBack } from "../../lib/navigation";
 import KeyboardAwareForm from "./KeyboardAwareForm";
 import ModelTest from "../modeltest";
+import { router } from "expo-router";
 
 const SettingsDetail = () => {
   const handleGoBack = () => {
-    goBack();
+    router.back();
   };
 
   const handleSaveSettings = () => {
     // TODO: Implement save settings logic
-    goBack();
+    router.back();
   };
 
   return (
-      <ScrollView style={styles.container}>
-          {/* <KeyboardAwareForm /> */}
-          <ModelTest />
-      {/* <View style={styles.content}>
+    <ScrollView style={styles.container}>
+      {/* <KeyboardAwareForm /> */}
+      {/* <ModelTest /> */}
+      <View style={styles.content}>
         <AppText variant="heading" style={styles.title}>
           Settings Detail
         </AppText>
@@ -84,10 +85,7 @@ const SettingsDetail = () => {
           </View>
         </View>
 
-        <AppButton
-          onPress={handleSaveSettings}
-          style={styles.saveButton}
-        >
+        <AppButton onPress={handleSaveSettings} style={styles.saveButton}>
           Save Settings
         </AppButton>
 
@@ -98,7 +96,7 @@ const SettingsDetail = () => {
         >
           Go Back
         </AppButton>
-      </View> */}
+      </View>
     </ScrollView>
   );
 };
