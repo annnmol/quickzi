@@ -5,6 +5,8 @@ import AppButton from "../ui/button";
 import { theme } from "../../lib/theme";
 import { tokens } from "../../lib/tokens";
 import { goBack } from "../../lib/navigation";
+import KeyboardAwareForm from "./KeyboardAwareForm";
+import ModelTest from "../modeltest";
 
 const SettingsDetail = () => {
   const handleGoBack = () => {
@@ -17,8 +19,10 @@ const SettingsDetail = () => {
   };
 
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.content}>
+      <ScrollView style={styles.container}>
+          {/* <KeyboardAwareForm /> */}
+          <ModelTest />
+      {/* <View style={styles.content}>
         <AppText variant="heading" style={styles.title}>
           Settings Detail
         </AppText>
@@ -94,7 +98,7 @@ const SettingsDetail = () => {
         >
           Go Back
         </AppButton>
-      </View>
+      </View> */}
     </ScrollView>
   );
 };
