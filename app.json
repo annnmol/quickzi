@@ -20,7 +20,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#FCD14D"
       },
       "edgeToEdgeEnabled": true,
       "package": "com.anmoltanwar.quickzi"
@@ -32,7 +32,11 @@
       [
         "expo-splash-screen",
         {
-          "preventAutoHide": false
+          "preventAutoHide": false,
+          "resizeMode": "contain",
+          "backgroundColor": "#FCD14D",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200
         }
       ],
       [
