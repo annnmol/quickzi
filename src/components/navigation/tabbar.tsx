@@ -3,6 +3,7 @@ import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import React, { FC, useCallback, useEffect, useMemo } from "react";
 import {
   Alert,
+  Dimensions,
   Platform,
   StyleSheet,
   TouchableOpacity,
@@ -12,7 +13,7 @@ import Animated, {
   runOnJS,
   useAnimatedStyle,
   useSharedValue,
-  withSpring,
+  withSpring
 } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -66,6 +67,8 @@ const TAB_CONFIGS: Record<string, TabConfig> = {
   },
 };
 
+const { width: SCREEN_WIDTH } = Dimensions.get("window");
+
 // Production-grade animation config
 const ANIMATION_CONFIG = {
   spring: {
@@ -73,8 +76,15 @@ const ANIMATION_CONFIG = {
     stiffness: Platform.select({ ios: 150, android: 120 }),
     mass: 1,
   },
+  indicatorSpring: {
+    damping: 20,
+    stiffness: 200,
+    mass: 0.8,
+  },
   iconSize: Platform.select({ ios: 22, android: 20 }),
   minHeight: 56,
+  indicatorHeight: 3,
+  indicatorWidth: SCREEN_WIDTH / 4 - 32, // Dynamic width based on screen size
 } as const;
 
 // Production-grade animated tab item component
@@ -151,6 +161,34 @@ const AnimatedTabItem: FC<TabItemProps> = React.memo(
 
 AnimatedTabItem.displayName = "AnimatedTabItem";
 
+// Animated indicator component
+const AnimatedIndicator: FC<{
+  activeIndex: number;
+  tabCount: number;
+}> = React.memo(({ activeIndex, tabCount }) => {
+  const translateX = useSharedValue(0);
+
+  // Calculate tab width dynamically
+  const tabWidth = useMemo(() => {
+    return (SCREEN_WIDTH - tokens.spacing16 * 2) / tabCount;
+  }, [tabCount]);
+
+  // Update indicator position when active tab changes
+  useEffect(() => {
+    const targetX = activeIndex * tabWidth + tokens.spacing16;
+    translateX.value = withSpring(targetX, ANIMATION_CONFIG.indicatorSpring);
+  }, [activeIndex, tabWidth]);
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{ translateX: translateX.value }],
+    width: tabWidth,
+  }));
+
+  return <Animated.View style={[styles.indicator, animatedStyle]} />;
+});
+
+AnimatedIndicator.displayName = "AnimatedIndicator";
+
 const AppTabBar: FC<BottomTabBarProps> = ({
   state,
   descriptors,
@@ -206,6 +244,13 @@ const AppTabBar: FC<BottomTabBarProps> = ({
     <View style={containerStyle}>
       <View style={styles.shadow} />
       <View style={styles.tabBar}>
+        <AnimatedIndicator
+          activeIndex={state.index}
+          tabCount={
+            state.routes.filter((route) => TAB_CONFIGS[route.name]).length
+          }
+        />
+
         {state.routes.map((route, index) => {
           // const { options } = descriptors[route.key];
           const isFocused = state.index === index;
@@ -263,8 +308,26 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: theme.card,
     paddingHorizontal: tokens.spacing16,
-    paddingTop: tokens.spacing4,
+    paddingTop: tokens.spacing6,
     paddingBottom: tokens.spacing8,
+    position: "relative",
+  },
+  indicator: {
+    position: "absolute",
+    top: 0,
+    height: ANIMATION_CONFIG.indicatorHeight,
+    backgroundColor: theme.primary,
+    borderRadius: ANIMATION_CONFIG.indicatorHeight / 2,
+    ...Platform.select({
+      ios: {
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.3,
+        shadowRadius: 2,
+      },
+      android: {
+        elevation: 2,
+      },
+    }),
   },
   tabItem: {
     flex: 1,
