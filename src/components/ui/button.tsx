@@ -1,19 +1,19 @@
 import { ElementRef, forwardRef, memo, type ReactNode, useMemo } from "react";
 import {
-    StyleSheet,
-    Text,
-    TextProps,
-    TouchableOpacity,
-    TouchableOpacityProps,
-    TextStyle,
-    ViewStyle,
-    StyleProp,
+  StyleSheet,
+  Text,
+  TextProps,
+  TouchableOpacity,
+  TouchableOpacityProps,
+  TextStyle,
+  ViewStyle,
+  StyleProp,
 } from "react-native";
 
 //custom imports
-import { TextVariant, textVariants } from "@app/src/lib/text";
 import { theme, ThemeKeys } from "@app/src/lib/theme";
 import { tokens } from "@app/src/lib/tokens";
+import { textStyles, TextVariant } from "./text";
 
 export type ButtonVariant =
   | "primary"
@@ -21,7 +21,7 @@ export type ButtonVariant =
   | "ghost"
   | "grey"
   | "danger"
-  | "danger-outline";
+  | "dangerOutline";
 
 export interface AppButtonProps extends TouchableOpacityProps {
   variant?: ButtonVariant;
@@ -61,7 +61,7 @@ const AppButton = memo(
           case "danger":
             return theme.onPrimary;
           case "outline":
-          case "danger-outline":
+          case "dangerOutline":
             return theme.primary;
           default:
             return theme.text;
@@ -82,7 +82,7 @@ const AppButton = memo(
 
       const textStyle = useMemo<TextStyle[]>(
         () => [
-          textVariants[textVariant],
+          textStyles[textVariant],
           { color: textColor },
           textProps?.style as TextStyle,
         ],
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     gap: tokens.spacing8,
   },
   fullWidth: {
-      alignSelf: "stretch",
+    alignSelf: "stretch",
     // width: "100%",
   },
   rounded: {
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
   danger: {
     backgroundColor: theme.red,
   },
-  "danger-outline": {
+  dangerOutline: {
     backgroundColor: "transparent",
     borderWidth: 1,
     borderColor: theme.red,

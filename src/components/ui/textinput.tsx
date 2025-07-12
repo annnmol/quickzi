@@ -11,8 +11,8 @@ import {
 
 // custom imports
 import { theme } from "@app/src/lib/theme";
-import { textVariants } from "@app/src/lib/text";
 import { tokens } from "@app/src/lib/tokens";
+import { textStyles } from "./text";
 
 export interface AppInputProps extends TextInputProps {
   containerStyle?: StyleProp<ViewStyle>;
@@ -27,7 +27,7 @@ const AppTextInput = memo(
           <TextInput
             ref={ref}
             placeholderTextColor={theme.icon}
-            style={[styles.input, textVariants.default, style]}
+            style={[styles.input, textStyles.default, style]}
             {...props}
           />
         </View>

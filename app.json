@@ -43,47 +43,47 @@
         "expo-font",
         {
           "fonts": [
-            "./assets/fonts/Inter-Regular.ttf",
-            "./assets/fonts/Inter-Medium.ttf",
-            "./assets/fonts/Inter-Bold.ttf",
-            "./assets/fonts/Inter-Light.ttf",
-            "./assets/fonts/Inter-SemiBold.ttf",
-            "./assets/fonts/Inter-Italic.ttf"
+            "./assets/fonts/Satoshi-Black.ttf",
+            "./assets/fonts/Satoshi-Bold.ttf",
+            "./assets/fonts/Satoshi-Italic.ttf",
+            "./assets/fonts/Satoshi-Light.ttf",
+            "./assets/fonts/Satoshi-Medium.ttf",
+            "./assets/fonts/Satoshi-Regular.ttf"
           ],
           "android": {
             "fonts": [
               {
-                "fontFamily": "Inter",
+                "fontFamily": "Satoshi",
                 "fontDefinitions": [
                   {
-                    "path": "./assets/fonts/Inter-Regular.ttf",
-                    "weight": 400,
-                    "style": "normal"
-                  },
-                  {
-                    "path": "./assets/fonts/Inter-Medium.ttf",
-                    "weight": 500,
-                    "style": "normal"
-                  },
-                  {
-                    "path": "./assets/fonts/Inter-SemiBold.ttf",
-                    "weight": 600,
-                    "style": "normal"
-                  },
-                  {
-                    "path": "./assets/fonts/Inter-Bold.ttf",
+                    "path": "./assets/fonts/Satoshi-Black.ttf",
                     "weight": 700,
                     "style": "normal"
                   },
                   {
-                    "path": "./assets/fonts/Inter-Light.ttf",
+                    "path": "./assets/fonts/Satoshi-Bold.ttf",
+                    "weight": 600,
+                    "style": "normal"
+                  },
+                  {
+                    "path": "./assets/fonts/Satoshi-Italic.ttf",
+                    "weight": 300,
+                    "style": "italic"
+                  },
+                  {
+                    "path": "./assets/fonts/Satoshi-Light.ttf",
                     "weight": 300,
                     "style": "normal"
                   },
                   {
-                    "path": "./assets/fonts/Inter-Italic.ttf",
+                    "path": "./assets/fonts/Satoshi-Medium.ttf",
+                    "weight": 500,
+                    "style": "normal"
+                  },
+                  {
+                    "path": "./assets/fonts/Satoshi-Regular.ttf",
                     "weight": 400,
-                    "style": "italic"
+                    "style": "normal"
                   }
                 ]
               }
@@ -93,8 +93,6 @@
       ],
       "expo-router"
     ],
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "assetBundlePatterns": ["**/*"]
   }
 }
