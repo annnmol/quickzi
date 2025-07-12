@@ -1,55 +1,36 @@
 import { Tabs } from "expo-router";
 import React from "react";
 
+// Custom imports
+import AppTabBar from "@app/src/components/navigation/tabbar";
+
 const ProtectedLayout = () => {
   return (
-    <Tabs>
-      <Tabs.Screen 
-        name="home" 
+    <Tabs tabBar={(props) => <AppTabBar {...props} />}>
+      <Tabs.Screen
+        name="home"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color, size }) => null, // Add your icon here
+          title: "Home",
         }}
       />
-      <Tabs.Screen 
-        name="search" 
+      <Tabs.Screen
+        name="search"
         options={{
-          title: 'Search',
-          tabBarIcon: ({ color, size }) => null, // Add your icon here
+          title: "Search",
         }}
       />
-      <Tabs.Screen 
-        name="profile" 
+      <Tabs.Screen
+        name="profile"
         options={{
-          title: 'Profile',
-          tabBarIcon: ({ color, size }) => null, // Add your icon here
+          title: "Profile",
         }}
       />
-      <Tabs.Screen 
-        name="settings" 
+      <Tabs.Screen
+        name="settings"
         options={{
-          title: 'Settings',
-          tabBarIcon: ({ color, size }) => null, // Add your icon here
+          title: "Settings",
         }}
       />
-      {/* <Tabs.Screen 
-        name="settings-detail" 
-        options={{
-          href: null, // Hide from tab bar
-        }}
-      />
-      <Tabs.Screen 
-        name="search-detail" 
-        options={{
-          href: null, // Hide from tab bar
-        }}
-      />
-      <Tabs.Screen 
-        name="edit-profile" 
-        options={{
-          href: null, // Hide from tab bar
-        }}
-      /> */}
     </Tabs>
   );
 };
